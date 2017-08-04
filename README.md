@@ -2,7 +2,7 @@
 
 IPFire network object creator for IPv4 addresses based on ASN information.
 
-For detailed description of this script please see the article (in German) on [Kuketz-Blog](https://www.kuketz-blog.de/asn-skript-datensammler-haben-ausgeschnueffelt-ipfire-teil3/)
+For detailed description of this script please see the article on Kuketz-Blog: [ASN-Skript: Datensammler haben ausgeschnüffelt – IPFire Teil3](https://www.kuketz-blog.de/asn-skript-datensammler-haben-ausgeschnueffelt-ipfire-teil3/)
 
 
 
