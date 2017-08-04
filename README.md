@@ -5,8 +5,9 @@ IPFire network object creator for IPv4 addresses based on ASN information.
 For detailed description of this script please see the article (in German) on [Kuketz-Blog](https://www.kuketz-blog.de/asn-skript-datensammler-haben-ausgeschnueffelt-ipfire-teil3/)
 
 
+
 **Output of 
-`asn_ipfire.sh --help`:**
+`asn_ipfire_beta.sh --help` respectively `asn_ipfire.sh --help` :**
 ```
 Usage: asn_ipfire.sh [OPTION] [COMPANYs | -f FILE]
 Add or remove networks to IPFire firewall Groups: Networks & Host Groups
