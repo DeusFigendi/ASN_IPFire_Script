@@ -52,6 +52,9 @@ Notes:
 ```
 
 ## Change log
+v0.6.1 (2017-08-22)
+- bugfix on some systems
+
 v0.6.0 (2017-08-21)
 - fixed missing networks on 32 bit systems
 - fixed network_raw mode
