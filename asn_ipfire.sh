@@ -7,8 +7,8 @@
 #######################################################################
 
 #######################################################################
-  revision="asn_ipfire.sh v0.6.0"                    # do not comment out
-# Last updated: August 21 2017 by maloe
+  revision="asn_ipfire.sh v0.6.1"                    # do not comment out
+# Last updated: August 22 2017 by maloe
 # Author: Mike Kuketz, maloe
 # Visit: www.kuketz-blog.de
 #######################################################################
@@ -130,7 +130,8 @@ local_net_file="local_net_list.txt"		# Note: Each network must be in the same ro
 						do {
 							printf 32-int(log(expo)/log(2))" "
 							expo=expo-2^int(log(expo)/log(2))
-						} while (expo > 0) printf "\n"
+						} while (expo > 0) 
+						printf "\n"
 					}'`
 
 				for suffix in $suffix_list; do										# Create new CIDR
