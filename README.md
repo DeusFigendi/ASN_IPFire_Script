@@ -53,7 +53,7 @@ Notes:
 
 ## Change log
 v0.6.2 (2017-08-25)
-- exchanged cur with wget
+- exchanged curl with wget
 - added info about result file in non-ipfire mode
 - fixed alternative sources functions
 
