@@ -41,7 +41,7 @@ usage example: asn_ipfire.sh -a "CompanyA CompanyB CompanyC"
                asn_ipfire.sh --asn "CompanyA,CompanyB,CompanyC" 
 
 FILE = name of a file, containing one or more company names.
-Company names to be separated by space or line feeds.
+Company names to be separated by space or line feed.
 usage example: asn_ipfire.sh -r -f company.lst 
                asn_ipfire.sh --network -f company.lst 
 
@@ -52,6 +52,11 @@ Notes:
 ```
 
 ## Change log
+v0.6.2 (2017-08-25)
+- exchanged cur with wget
+- added info about result file in non-ipfire mode
+- fixed alternative sources functions
+
 v0.6.1 (2017-08-22)
 - bugfix on some systems
 
