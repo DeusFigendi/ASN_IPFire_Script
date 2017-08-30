@@ -5,11 +5,6 @@ IPFire network object creator for IPv4 addresses based on ASN information.
 For detailed description of this script please see the article on Kuketz-Blog: [ASN-Skript: Datensammler haben ausgeschnüffelt – IPFire Teil3](https://www.kuketz-blog.de/asn-skript-datensammler-haben-ausgeschnueffelt-ipfire-teil3/)
 
 
-## Note: Script renamed to asn_ipfire.sh
-Script is still beta, but new file name is asn_ipfire.sh
-
-File name asn_ipfire_beta.sh is outdated and will be removed soon. Please update your links accordingly.
-
 ## Usage
 **Output of 
 `asn_ipfire.sh --help` :**
@@ -51,6 +46,7 @@ Notes:
   These entries are recognized by the 'Remark'-column in IPFire.
 ```
 
+
 ## Change log
 v0.6.2 (2017-08-25)
 - exchanged curl with wget
@@ -74,3 +70,12 @@ v0.5.2 (2017-06-19)
 - added consolidation of dublicate and adjacents networks
 - integrated ipfire, afwall and iptables output into one script
 - added different features
+
+
+## Beta Testing - asn_ipfire_beta.sh
+File asn_ipfire_beta.sh is used now for early testing of bug fixes, new functions etc.
+
+v0.6.3_beta (2017-08-30)
+- added support for companies with space in the name
+- forced https only for wget
+
