@@ -7,7 +7,7 @@
 #######################################################################
 
 #######################################################################
-  revision="asn_ipfire.sh v0.7.0"                  # do not comment out
+  revision="asn_ipfire.sh v0.7.1"                  # do not comment out
 # Last updated: November 19 2017 by maloe
 # Author: Mike Kuketz, maloe
 # Visit: www.kuketz-blog.de
@@ -97,23 +97,23 @@ getNETfromASN=( \
 	ASN_bglookingglass() 	# Get ASN from bgplookingglass.com
 	{ 
 		if [[ $dl != "local" ]]; then													# wget or curl available?
-			if [[ ! -f $temp1 ]] && [[ ${#company_array[@]} -gt 1 || $keeptemp ]]; then						# Temp file not exist and more than one company names or option keeptemp is enabled
+			if [[ ! -f $temp2 ]] && [[ ${#company_array[@]} -gt 1 || $keeptemp ]]; then						# Temp file not exist and more than one company names or option keeptemp is enabled
 				touch $temp2 2> /dev/null											# Check if writable?
 				if [[ -w $temp2 ]]; then
 					echo "---[Downloading ASN Source List from www.bgplookingglass.com]---"
-					$dl "http://www.bgplookingglass.com/list-of-autonomous-system-numbers" | sed 's/<br /\n/g' | grep -Eo 'AS[0-9]+.*' >> $temp2
-					$dl "http://www.bgplookingglass.com/list-of-autonomous-system-numbers-2" | sed 's/<br /\n/g' | grep -Eo 'AS[0-9]+.*' >> $temp2
-					$dl "http://www.bgplookingglass.com/4-byte-asn-names-list" | sed 's/<br /\n/g' | grep -Eo 'AS[0-9]+.*' >> $temp2
+					$dl "http://www.bgplookingglass.com/list-of-autonomous-system-numbers" | sed 's/<br /\n/g' | sed 's/^\/>//g' | grep -Eo '^AS[0-9]+.*' >> $temp2
+					$dl "http://www.bgplookingglass.com/list-of-autonomous-system-numbers-2" | sed 's/<br /\n/g' | sed 's/^\/>//g' | grep -Eo '^AS[0-9]+.*' >> $temp2
+					$dl "http://www.bgplookingglass.com/4-byte-asn-names-list" | sed 's/<br /\n/g' | sed 's/^\/>//g' | grep -Eo '^AS[0-9]+.*' >> $temp2
 				fi
 			fi
 			cname=`echo $1 | sed 's/~/ /g; s/*/.*/g'` 										# Replace ~ with space and * with expression .*
 			if [[ -f $temp2 ]]; then 												# Read from temp file
-				asn_array=`cat $temp2 | sed 's/<br /\n/g' | grep -i "$cname" | grep -Eo 'AS[0-9]+'`
+				asn_array=`cat $temp2 | grep -i "$cname" | grep -Eo '^AS[0-9]+'`
 			else															# Temp file not writable
 				echo "---[Downloading ASN Source List from www.bgplookingglass.com]---"
-				asn_array=(`$dl "http://www.bgplookingglass.com/list-of-autonomous-system-numbers" | sed 's/<br /\n/g' | grep -i "$cname" | grep -Eo 'AS[0-9]+'`)
-				asn_array=(${asn_array[@]} `$dl "http://www.bgplookingglass.com/list-of-autonomous-system-numbers-2" | sed 's/<br /\n/g' | grep -i "$cname" | grep -Eo 'AS[0-9]+'`)
-				asn_array=(${asn_array[@]} `$dl "http://www.bgplookingglass.com/4-byte-asn-names-list" | sed 's/<br /\n/g' | grep -i "$cname" | grep -Eo 'AS[0-9]+'`)
+				asn_array=(`$dl "http://www.bgplookingglass.com/list-of-autonomous-system-numbers" | sed 's/<br /\n/g' | sed 's/^\/>//g' | grep -i "$cname" | grep -Eo '^AS[0-9]+'`)
+				asn_array=(${asn_array[@]} `$dl "http://www.bgplookingglass.com/list-of-autonomous-system-numbers-2" | sed 's/<br /\n/g' | sed 's/^\/>//g' | grep -i "$cname" | grep -Eo '^AS[0-9]+'`)
+				asn_array=(${asn_array[@]} `$dl "http://www.bgplookingglass.com/4-byte-asn-names-list" | sed 's/<br /\n/g' | sed 's/^\/>//g' | grep -i "$cname" | grep -Eo '^AS[0-9]+'`)
 			fi
 		fi
 	}

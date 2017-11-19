@@ -18,7 +18,7 @@ By default asn_ipfire.sh still creates the entries for IPFire, but output option
 
 The script is intended to be run on an IPFire installation, but it is also running on other Linux distributions as well as on Android terminals (root needed).
 
-## Update to version 0.7.0
+## Update to version 0.7+
 If you update from previous versions be aware that the format of COMPANY names has been changed.   
 **Only comma separation is supported now.** Company names must no longer be separated by spaces.   
 This may affect you, if you automatically start the script, e.g. via crontab or an launcher script. Also if you use a company file, which contains space saparated names, you need to adapt it.  
@@ -84,6 +84,9 @@ Option --remove only affects entries made by asn_ipfire.sh itself.
 
 
 ## Change log
+
+v0.7.1 (2017-11-19)
+- bugfix
 
 v0.7.0 (2017-11-19)
 - changed default ASN source to cidr-report
