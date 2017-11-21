@@ -8,7 +8,7 @@ The script collects ASN numbers, registered by / assigned to a company and then 
 For detailed description please read the article on Kuketz-Blog: [ASN-Skript: Datensammler haben ausgeschnüffelt – IPFire Teil3](https://www.kuketz-blog.de/asn-skript-datensammler-haben-ausgeschnueffelt-ipfire-teil3/)
 or see the wiki page.
 
-Originally this script was invented and started by [Mike Kuketz](www.kuketz-blog.de). He also wrote similar scripts to use same IPv4 networks lists in other output formats to be used directly with tools like iptables and android [afwall+](https://github.com/ukanth/afwall).
+Originally this script was invented and started by [Mike Kuketz](https://www.kuketz-blog.de). He also wrote similar scripts to use same IPv4 networks lists in other output formats to be used directly with tools like iptables and android [afwall+](https://github.com/ukanth/afwall).
 All these separate tools were now integrated into this script with further optimizations and additional features.  
 By default asn_ipfire.sh still creates the entries for IPFire, but output options for other applications are integrated: 
 - IPFire Groups (default)
