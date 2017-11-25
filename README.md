@@ -85,6 +85,9 @@ Option --remove only affects entries made by asn_ipfire.sh itself.
 
 ## Change log
 
+v0.7.3 (2017-11-25)
+- fixed not working option --file
+
 v0.7.2 (2017-11-19)
 - improved query
 

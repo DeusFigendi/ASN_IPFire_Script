@@ -7,8 +7,8 @@
 #######################################################################
 
 #######################################################################
-  revision="asn_ipfire.sh v0.7.2"                  # do not comment out
-# Last updated: November 19 2017 by maloe
+  revision="asn_ipfire.sh v0.7.3"                  # do not comment out
+# Last updated: November 25 2017 by maloe
 # Author: Mike Kuketz, maloe
 # Visit: www.kuketz-blog.de
 #######################################################################
@@ -565,14 +565,14 @@ while [[ $# > 0 ]] ; do
 				if [[ ! $2 ]]; then 
 					echo -e "No COMPANY names given.\n"$helptext
 					exit 0
-				else
-					if [[ ${2:0:1} == "-" && "$2" != "-f" && "$2" != "--file" ]]; then 	# followed by argument instead of company names
+				elif [[ ${2:0:1} == "-" ]]; then 	# followed by argument instead of company names
+					if [[ "$2" != "-f" && "$2" != "--file" ]]; then 	# followed by argument instead of company names
 						echo -e "Wrong order of arguments.\n"$helptext			# Wrong order of arguments --> exit
 						exit 0
-					else
-						company_array_from_arg=(`sed 's/[ ]*//g; s/,\+/ /g; s/\[//g; s/\]//g; s/[.\]*//g' <<< $2`)	# Trim empty entries
-						shift
 					fi
+				else
+					company_array_from_arg=(`sed 's/[ ]*//g; s/,\+/ /g; s/\[//g; s/\]//g; s/[.\]*//g' <<< $2`)	# Trim empty entries
+					shift
 				fi
 			fi
 		};;
